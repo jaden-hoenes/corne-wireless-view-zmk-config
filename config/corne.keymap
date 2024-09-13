@@ -23,6 +23,15 @@
         };
     };
 
+    macros {
+        meh: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -35,10 +44,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB     &kp Q  &kp W  &kp F      &kp P  &kp B         &kp J      &kp L  &kp U       &kp Y      &kp EQUAL  &kp APOS
-&kp ESCAPE  &kp A  &kp R  &kp S      &kp T  &kp G         &kp M      &kp N  &kp E       &kp I      &kp O      &kp BACKSPACE
-&kp LSHFT   &kp Z  &kp X  &kp C      &kp D  &kp V         &kp K      &kp H  &kp PERIOD  &kp COMMA  &kp LALT   &kp RIGHT_SHIFT
-                          &kp LCTRL  &none  &kp RETURN    &kp SPACE  &to 1  &kp LGUI
+&kp TAB     &kp Q  &kp W  &kp F      &kp P  &kp B                           &kp J      &kp L  &kp U       &kp Y      &kp EQUAL  &kp RALT
+&kp ESCAPE  &kp A  &kp R  &kp S      &kp T  &kp G                           &kp M      &kp N  &kp E       &kp I      &kp O      &kp BACKSPACE
+&kp LSHFT   &kp Z  &kp X  &kp C      &kp D  &kp V                           &kp K      &kp H  &kp PERIOD  &kp COMMA  &kp LALT   &kp RIGHT_SHIFT
+                          &kp LCTRL  &none  &mt LA(LC(LG(LSHIFT))) SPACE    &kp SPACE  &to 1  &kp LGUI
             >;
         };
 
