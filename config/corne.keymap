@@ -18,17 +18,8 @@
         };
 
         alley_oop {
-            bindings = <&to 2>;
+            bindings = <&to 0>;
             key-positions = <36 40>;
-        };
-    };
-
-    macros {
-        meh: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "NEW_MACRO";
         };
     };
 
@@ -54,6 +45,18 @@
             hold-trigger-key-positions = <29 17 5 4 3 2 3 4 14 15 16 26 27 28 1 13 25>;
             flavor = "tap-unless-interrupted";
         };
+
+        meh: meh {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MEH";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            flavor = "tap-unless-interrupted";
+            retro-tap;
+            hold-trigger-key-positions = <16 15 14 13>;
+        };
     };
 
     keymap {
@@ -68,42 +71,19 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB     &kp Q  &kp W         &kp F          &kp P          &kp B        &kp J                         &kp L          &kp U          &kp Y         &kp EQUAL  &none
-&kp ESCAPE  &kp A  &lpht LALT R  &lpht LMETA S  &lpht LCTRL T  &kp G        &kp M                         &rpht RCTRL N  &rpht RMETA E  &rpht RALT I  &kp O      &kp BACKSPACE
-&kp LSHFT   &kp Z  &kp X         &kp C          &kp D          &kp V        &kp K                         &kp H          &kp PERIOD     &kp COMMA     &none      &kp RIGHT_SHIFT
-                                 &to 3          &none          &kp ENTER    &mt LA(LC(LG(LSHIFT))) SPACE  &to 1          &to 4
+&kp TAB     &kp Q           &kp W         &kp F          &kp P          &kp B        &kp J                         &kp L          &kp U          &kp Y         &kp EQUAL       &none
+&kp ESCAPE  &lpht LSHIFT A  &lpht LALT R  &lpht LMETA S  &lpht LCTRL T  &kp G        &kp M                         &rpht RCTRL N  &rpht RMETA E  &rpht RALT I  &rpht RSHIFT O  &kp BACKSPACE
+&none       &kp Z           &kp X         &kp C          &kp D          &kp V        &kp K                         &kp H          &kp PERIOD     &kp COMMA     &none           &none
+                                          &none          &none          &kp ENTER    &meh RA(RC(RG(RSHFT))) SPACE  &to 1          &none
             >;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "Lower";
+        special_characters {
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5    &kp F6     &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans  &kp N1   &kp N2   &kp N3  &kp N4  &kp N5    &kp N6     &kp N7  &kp N8  &kp N9  &kp N0   &kp DELETE
-&trans  &kp F11  &kp F12  &trans  &trans  &trans    &trans     &trans  &trans  &trans  &trans   &trans
-                          &trans  &to 0   &trans    &kp ENTER  &to 2   &trans
-            >;
-        };
-
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "Raise";
-            bindings = <
-&trans  &kp EXCL          &kp AT         &kp POUND       &kp DOLLAR            &kp PERCENT    &kp CARET  &kp AMPS               &kp ASTERISK     &kp PLUS          &kp PIPE           &trans
-&trans  &kp LEFT_BRACKET  &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp COLON      &kp SEMI   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp RIGHT_BRACKET  &trans
-&trans  &trans            &trans         &kp BACKSLASH   &kp UNDERSCORE        &kp GRAVE      &kp TILDE  &kp MINUS              &kp SLASH        &kp QUESTION      &trans             &trans
-                                         &trans          &mo 1                 &trans         &trans     &trans                 &trans
+&trans  &trans  &trans  &trans   &trans             &trans    &kp PLUS  &kp MINUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp UNDER        &trans
+&trans  &trans  &trans  &kp SQT  &kp DOUBLE_QUOTES  &trans    &trans    &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &trans
+&trans  &trans  &trans  &trans   &trans             &trans    &trans    &kp ASTRK       &kp SLASH             &kp BACKSLASH          &trans           &trans
+                        &trans   &to 0              &trans    &trans    &trans          &trans
             >;
         };
 
@@ -122,6 +102,24 @@
 &kp LC(LG(Q))  &trans        &trans        &trans        &trans        &trans          &trans  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans
 &trans         &trans        &trans        &trans        &trans        &trans          &trans  &trans    &trans  &trans    &trans     &trans
                                            &trans        &trans        &trans          &trans  &trans    &trans
+            >;
+        };
+
+        number_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7        &kp N8        &kp N9        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
+                        &trans  &trans  &mo 5     &trans  &kp N0        &trans
+            >;
+        };
+
+        function_layer {
+            bindings = <
+&trans  &trans      &trans    &trans    &trans     &trans    &trans  &kp F7   &kp F8  &kp F9  &trans  &trans
+&trans  &kp LSHIFT  &kp LALT  &kp LGUI  &kp LCTRL  &trans    &trans  &kp F4   &kp F5  &kp F6  &trans  &trans
+&trans  &trans      &trans    &trans    &trans     &trans    &trans  &kp F1   &kp F2  &kp F3  &trans  &trans
+                              &trans    &trans     &trans    &trans  &kp F10  &trans
             >;
         };
     };
