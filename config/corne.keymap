@@ -18,9 +18,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             flavor = "tap-unless-interrupted";
-            hold-trigger-key-positions = <6 7 8 9 10 22 34 33 21 20 19 18 30 31 32>;
+            hold-trigger-key-positions = <6 7 8 9 10 22 34 33 21 20 19 18 30 31 32 11 23 35 41 40 39>;
+            retro-tap;
         };
 
         rpht: rpht {
@@ -29,9 +30,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            hold-trigger-key-positions = <29 17 5 4 3 2 3 4 14 15 16 26 27 28 1 13 25>;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <29 17 5 4 3 2 3 4 14 15 16 26 27 28 1 13 25 0 1 2 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             flavor = "tap-unless-interrupted";
+            retro-tap;
         };
 
         meh: meh {
@@ -40,7 +42,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <200>;
             flavor = "tap-unless-interrupted";
             retro-tap;
             hold-trigger-key-positions = <16 15 14 13>;
