@@ -98,7 +98,7 @@
             bindings = <
 &kp GRAVE  &kp EXCLAMATION  &kp AT            &kp HASH          &kp DOLLAR                &kp SLASH               &kp BACKSLASH          &kp PERCENT                &kp CARET        &kp AMPS          &kp ASTRK  &kp DELETE
 &trans     &trans           &lpht LALT MINUS  &lpht LGUI COLON  &lpht LCTRL LEFT_BRACKET  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &rpht RCTRL RIGHT_BRACKET  &rpht RGUI SEMI  &rpht RALT UNDER  &trans     &trans
-&trans     &trans           &trans            &trans            &trans                    &kp LESS_THAN           &kp GREATER_THAN       &trans                     &trans           &trans            &trans     &trans
+&trans     &trans           &trans            &trans            &kp DOUBLE_QUOTES         &kp LESS_THAN           &kp GREATER_THAN       &kp SINGLE_QUOTE           &trans           &trans            &trans     &trans
                                               &mo 5             &trans                    &trans                  &trans                 &trans                     &trans
             >;
         };
