@@ -70,7 +70,7 @@
             display-name = "Base";
             bindings = <
 &kp ESCAPE  &kp Q  &kp W         &kp F          &kp P          &kp B        &kp J                         &kp L          &kp U          &kp Y         &kp SEMI   &kp BACKSPACE
-&kp TAB     &kp A  &lpht LALT R  &lpht LMETA S  &lpht LCTRL T  &kp G        &kp M                         &rpht RCTRL N  &rpht RMETA E  &rpht RALT I  &kp O      &kp RETURN
+&kp TAB     &kp A  &lpht LALT R  &lpht LMETA S  &lpht LCTRL T  &kp G        &kp M                         &rpht RCTRL N  &rpht RMETA E  &rpht RALT I  &kp O      &kp BACKSPACE
 &kp LSHIFT  &kp Z  &kp X         &kp C          &kp D          &kp V        &kp K                         &kp H          &kp COMMA      &kp PERIOD    &kp SLASH  &kp RSHIFT
                                  &mo 1          &mo 2          &kp ENTER    &meh RA(RC(RG(RSHFT))) SPACE  &mo 3          &mo 4
             >;
