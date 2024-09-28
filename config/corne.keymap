@@ -69,7 +69,7 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB     &kp Q  &kp W         &kp F          &kp P          &kp B        &kp J                         &kp L          &kp U          &kp Y         &kp SEMI   &kp BACKSPACE
+&kp TAB     &kp Q  &kp W         &kp F          &kp P          &kp B        &kp J                         &kp L          &kp U          &kp Y         &kp SEMI   &none
 &kp ESCAPE  &kp A  &lpht LALT R  &lpht LMETA S  &lpht LCTRL T  &kp G        &kp M                         &rpht RCTRL N  &rpht RMETA E  &rpht RALT I  &kp O      &kp BACKSPACE
 &kp LSHIFT  &kp Z  &kp X         &kp C          &kp D          &kp V        &kp K                         &kp H          &kp COMMA      &kp PERIOD    &kp SLASH  &kp RSHIFT
                                  &mo 1          &mo 2          &kp ENTER    &meh RA(RC(RG(RSHFT))) SPACE  &mo 3          &mo 4
@@ -96,8 +96,8 @@
 
         special_characters {
             bindings = <
-&kp GRAVE  &kp EXCLAMATION  &kp AT            &kp HASH          &kp DOLLAR                &kp SLASH               &kp BACKSLASH          &kp PERCENT                &kp CARET        &kp AMPS          &kp ASTRK  &kp DELETE
-&trans     &trans           &lpht LALT MINUS  &lpht LGUI COLON  &lpht LCTRL LEFT_BRACKET  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &rpht RCTRL RIGHT_BRACKET  &rpht RGUI SEMI  &rpht RALT UNDER  &trans     &trans
+&kp GRAVE  &kp EXCLAMATION  &kp AT            &kp HASH          &kp DOLLAR                &kp SLASH               &kp BACKSLASH          &kp PERCENT                &kp CARET        &kp AMPS          &kp ASTRK  &trans
+&trans     &trans           &lpht LALT MINUS  &lpht LGUI COLON  &lpht LCTRL LEFT_BRACKET  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &rpht RCTRL RIGHT_BRACKET  &rpht RGUI SEMI  &rpht RALT UNDER  &trans     &kp DELETE
 &trans     &trans           &trans            &trans            &kp DOUBLE_QUOTES         &kp LESS_THAN           &kp GREATER_THAN       &kp SINGLE_QUOTE           &trans           &trans            &trans     &trans
                                               &mo 5             &trans                    &trans                  &trans                 &trans                     &trans
             >;
