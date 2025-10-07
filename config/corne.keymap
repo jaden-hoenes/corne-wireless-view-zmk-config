@@ -20,7 +20,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <6 7 8 9 10 22 34 33 21 20 19 18 30 31 32 11 23 35 41 40 39>;
             retro-tap;
@@ -32,22 +32,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             hold-trigger-key-positions = <29 17 5 4 3 2 3 4 14 15 16 26 27 28 1 13 25 0 1 2 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             flavor = "tap-preferred";
             retro-tap;
-        };
-
-        meh: meh {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MEH";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            retro-tap;
-            hold-trigger-key-positions = <16 15 14 13>;
         };
 
         colon_semi: colon_semi {
@@ -71,10 +59,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB     &kp Q  &kp W         &kp F          &kp P          &kp B        &kp J                         &kp L          &kp U          &kp Y         &kp SEMI   &mo 6
-&kp ESCAPE  &kp A  &lpht LALT R  &lpht LMETA S  &lpht LCTRL T  &kp G        &kp M                         &rpht RCTRL N  &rpht RMETA E  &rpht RALT I  &kp O      &kp BACKSPACE
-&kp LSHIFT  &kp Z  &kp X         &kp C          &kp D          &kp V        &kp K                         &kp H          &kp COMMA      &kp PERIOD    &kp SLASH  &kp RSHIFT
-                                 &mo 1          &mo 3          &kp ENTER    &meh RA(RC(RG(RSHFT))) SPACE  &mo 4          &mo 1
+&kp TAB     &kp Q  &kp W         &kp F          &kp P          &kp B        &kp J      &kp L          &kp U          &kp Y         &kp SEMI   &mo 6
+&kp ESCAPE  &kp A  &lpht LALT R  &lpht LMETA S  &lpht LCTRL T  &kp G        &kp M      &rpht RCTRL N  &rpht RMETA E  &rpht RALT I  &kp O      &kp BACKSPACE
+&kp LSHIFT  &kp Z  &kp X         &kp C          &kp D          &kp V        &kp K      &kp H          &kp COMMA      &kp PERIOD    &kp SLASH  &kp RSHIFT
+                                 &mo 1          &mo 3          &kp ENTER    &kp SPACE  &mo 4          &mo 1
             >;
         };
 
